@@ -1,10 +1,9 @@
 import React from "react";
+import { MyRoutes } from "./router/router";
 
 function App() {
   return (
-    <div>
-      <h1>Rick-and-Morty</h1>
-    </div>
+   <MyRoutes />
   );
 }
 
