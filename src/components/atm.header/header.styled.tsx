@@ -8,7 +8,7 @@ export const Title = styled.h1`
   padding: 2rem 1rem;
   text-align: center;
   color: #11b1c9;
-  font-size: 3rem;
+  font-size: 10rem;
   font-family: "Riick";
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #c9dc61;

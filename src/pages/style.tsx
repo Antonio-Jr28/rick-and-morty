@@ -8,4 +8,11 @@ export const Wrapper = styled.section`
   padding: 10px;
 `;
 
-export const WrapperMoreInfo = styled.section``;
+export const WrapperMoreInfo = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  height: 880px;
+`;
