@@ -8,7 +8,7 @@ export const MyRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/Mais-informações" element={<MoreInfoPage />} />
+        <Route path="/Mais-informações/:caracter" element={<MoreInfoPage />} />
       </Routes>
     </BrowserRouter>
   );

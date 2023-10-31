@@ -1,16 +1,17 @@
 import { useQuery } from "@apollo/client";
-import { getCharacter } from "../data/character.query";
+import { getAllCharacter } from "../data/character.query";
 
-interface PersonagemProps {
-  characterId: string;
-}
+export const useGetCharacters = () => {
+  const { data, loading, error } = useQuery(getAllCharacter);
 
-export const Personagem = (props: PersonagemProps) => {
-  return useQuery(getCharacter, {
-    variables: {
-      data: {
-        CharacterData: props.characterId,
-      },
-    },
-  });
+  if (loading) {
+    return { loading: true, characters: [] };
+  }
+
+  if (error || !data || !data.characters || !data.characters.results) {
+    return { loading: false, characters: [], error: "Dados não encontrados" };
+  }
+
+  const characters = data.characters.results;
+  return { loading: false, characters };
 };

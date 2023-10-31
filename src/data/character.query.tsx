@@ -1,14 +1,13 @@
 import { gql } from "@apollo/client";
 
-export const getCharacter = gql`
-  query Query($characterId: ID!) {
-    character(id: $characterId) {
-      name
-      id
-      image
-      species
-      status
-      gender
+export const getAllCharacter = gql`
+  query GetAllCharacters {
+    characters {
+      results {
+        id
+        name
+        image
+      }
     }
   }
 `;

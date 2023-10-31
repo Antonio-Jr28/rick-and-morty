@@ -4,27 +4,28 @@ import { CardStyled } from "./card.style";
 import { Button } from "../atm.button";
 import { useNavigate } from "react-router-dom";
 
-export const Card = () => {
+interface CardProps {
+  id?: string;
+  image: string;
+  name: string;
+}
+
+export const Card = (props: CardProps) => {
   const navigation = useNavigate();
 
-  const handleMore = () => {
-    navigation("/Mais-informações");
-  }
+  const onRedirect = () => {
+    navigation(`/Mais-informações/${props.id}`);
+  };
   return (
     <CardStyled>
-      <img
-        src="https://rickandmortyapi.com/api/character/avatar/10.jpeg"
-        alt="imagen"
-      />
+      <img src={props.image} alt="imagen" />
 
       <div>
-        <h1>Rick</h1>
-        <p>Status</p>
-        {/* <span>status</span> */}
+        <h1>{props.name}</h1>
       </div>
 
       <div>
-        <Button onClick={handleMore} text="Mais informações" />
+        <Button onClick={onRedirect} text="Mais informações" />
       </div>
     </CardStyled>
   );
