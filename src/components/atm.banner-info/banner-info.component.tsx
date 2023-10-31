@@ -18,14 +18,14 @@ export const BannerInfo = () => {
         src="https://rickandmortyapi.com/api/character/avatar/10.jpeg"
         alt="imagen"
       />
-      <div>
+      <section>
         <p>Status</p>
         {/* <span>status</span> */}
         <p>Especie</p>
         {/* <span>Especie</span> */}
         <p>Gender</p>
         {/* <span>Gender</span> */}
-      </div>
+      </section>
 
       <div>
         <Button onClick={handleMore} text="Voltar ao inicio" />
