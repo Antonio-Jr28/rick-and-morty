@@ -1,9 +1,10 @@
 import React from "react";
+import { Buttonstyled } from "./button.style";
 
 interface CustomButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
-  onClick: () => void | undefined; // Sem parênteses extras
+  onClick: () => void | undefined;
   text: string;
 }
 
@@ -14,8 +15,8 @@ export const Button: React.FC<CustomButtonProps> = ({
   ...rest
 }) => {
   return (
-    <button {...rest} onClick={onClick}>
+    <Buttonstyled {...rest} onClick={onClick}>
       {loading ? "Carregando..." : text}
-    </button>
+    </Buttonstyled>
   );
 };

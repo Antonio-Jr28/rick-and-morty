@@ -2,9 +2,18 @@ import React from "react";
 
 import { Button } from "../atm.button";
 import { useNavigate } from "react-router-dom";
-import { BannerStyled } from "./banner-info.styled";
+import { BannerStyled, SpanStyled, Wrapperinfo } from "./banner-info.styled";
+import { bannerInfoString } from "./banner-info.string";
 
-export const BannerInfo = () => {
+interface BannerInfoProps {
+  name: string;
+  image: string;
+  status: string;
+  species: string;
+  gender: string;
+}
+
+export const BannerInfo = (props: BannerInfoProps) => {
   const navigation = useNavigate();
 
   const handleMore = () => {
@@ -12,23 +21,20 @@ export const BannerInfo = () => {
   };
   return (
     <BannerStyled>
-      <h1>Rick</h1>
+      <h1>{props.name}</h1>
 
-      <img
-        src="https://rickandmortyapi.com/api/character/avatar/10.jpeg"
-        alt="imagen"
-      />
-      <section>
-        <p>Status</p>
-        {/* <span>status</span> */}
-        <p>Especie</p>
-        {/* <span>Especie</span> */}
-        <p>Gender</p>
-        {/* <span>Gender</span> */}
-      </section>
+      <img src={props.image} alt={bannerInfoString.altImage}></img>
+      <Wrapperinfo>
+        <p>{bannerInfoString.status}</p>
+        <SpanStyled>{props.status}</SpanStyled>
+        <p>{bannerInfoString.species}</p>
+        <SpanStyled>{props.species}</SpanStyled>
+        <p>{bannerInfoString.gender}</p>
+        <SpanStyled>{props.gender}</SpanStyled>
+      </Wrapperinfo>
 
       <div>
-        <Button onClick={handleMore} text="Voltar ao inicio" />
+        <Button onClick={handleMore} text={bannerInfoString.button} />
       </div>
     </BannerStyled>
   );
