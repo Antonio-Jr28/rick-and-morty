@@ -1,8 +1,9 @@
 import React from "react";
 import { Header } from "../components/atm.header";
 import { Card } from "../components/atm.card";
-import { Title, CardsSection, WrapperHome } from "./style";
+import { CardsSection, Background } from "./style";
 import { useGetCharacters } from "../domain/get-character.use-case";
+import { Title } from "../components/atm.title/title.components";
 
 interface Character {
   id: string;
@@ -14,9 +15,9 @@ export const HomePage = () => {
   const { characters, loading } = useGetCharacters();
 
   return (
-    <WrapperHome>
+    <Background>
       <Header />
-      <Title>Personagens</Title>
+      <Title text="Personagens" />
       <CardsSection>
         {characters.map((character: Character) => (
           <Card
@@ -28,6 +29,6 @@ export const HomePage = () => {
           />
         ))}
       </CardsSection>
-    </WrapperHome>
+    </Background>
   );
 };

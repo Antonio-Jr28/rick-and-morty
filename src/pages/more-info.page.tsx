@@ -3,16 +3,18 @@ import { Header } from "../components/atm.header";
 import { BannerInfo } from "../components/atm.banner-info";
 import { useCharacterData } from "../domain/get-character-info.use-case";
 import { useParams } from "react-router-dom";
-import { WrapperMoreInfo } from "./style";
+import { Background, WrapperMoreInfo } from "./style";
 import { Separator } from "../components/atm.separator";
+import { Title } from "../components/atm.title/title.components";
 
 export const MoreInfoPage = () => {
   const { id } = useParams();
   const { loading, characterData } = useCharacterData(`${id}`);
   
   return (
-    <>
+    <Background>
       <Header />
+      <Title text="Detalhes dos Personagens" />
       <WrapperMoreInfo>
         <Separator />
         <BannerInfo
@@ -25,6 +27,6 @@ export const MoreInfoPage = () => {
         />
         <Separator />
       </WrapperMoreInfo>
-    </>
+    </Background>
   );
 };

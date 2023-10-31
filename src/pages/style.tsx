@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperHome = styled.div`
+export const Background = styled.div`
   background-color: gray;
 `;
 
@@ -20,15 +20,3 @@ export const WrapperMoreInfo = styled.section`
   height: 880px;
 `;
 
-export const Title = styled.h1`
-  margin: 0;
-  padding: 2rem 1rem;
-  text-align: center;
-  color: #11b1c9;
-  font-size: 5rem;
-  font-family: "Riick";
-  &:hover {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #c9dc61;
-  }
-`;
