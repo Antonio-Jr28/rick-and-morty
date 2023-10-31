@@ -11,7 +11,7 @@ interface Character {
 }
 
 export const HomePage = () => {
-  const { characters } = useGetCharacters();
+  const { characters, loading } = useGetCharacters();
 
   return (
     <>
@@ -19,6 +19,8 @@ export const HomePage = () => {
       <Wrapper>
         {characters.map((character: Character) => (
           <Card
+            loading={loading}
+            id={character.id}
             key={character.id}
             image={character.image}
             name={character.name}

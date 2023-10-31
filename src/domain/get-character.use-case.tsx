@@ -8,10 +8,11 @@ export const useGetCharacters = () => {
     return { loading: true, characters: [] };
   }
 
-  if (error || !data || !data.characters || !data.characters.results) {
+  if (error || !data) {
     return { loading: false, characters: [], error: "Dados não encontrados" };
   }
 
-  const characters = data.characters.results;
+  const characters = data?.characters?.results;
+
   return { loading: false, characters };
 };

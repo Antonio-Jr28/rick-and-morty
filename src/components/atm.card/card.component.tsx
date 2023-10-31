@@ -5,9 +5,10 @@ import { Button } from "../atm.button";
 import { useNavigate } from "react-router-dom";
 
 interface CardProps {
-  id?: string;
+  id: string;
   image: string;
   name: string;
+  loading: boolean;
 }
 
 export const Card = (props: CardProps) => {
@@ -16,6 +17,8 @@ export const Card = (props: CardProps) => {
   const onRedirect = () => {
     navigation(`/Mais-informações/${props.id}`);
   };
+
+  console.log(onRedirect, "ola");
   return (
     <CardStyled>
       <img src={props.image} alt="imagen" />
@@ -25,7 +28,7 @@ export const Card = (props: CardProps) => {
       </div>
 
       <div>
-        <Button onClick={onRedirect} text="Mais informações" />
+        <Button loading={props.loading} onClick={onRedirect} text="Mais informações" />
       </div>
     </CardStyled>
   );
