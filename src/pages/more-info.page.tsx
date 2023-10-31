@@ -1,14 +1,14 @@
 import React from "react";
 import { Header } from "../components/atm.header";
-import { Card } from "../components/atm.card";
 import { Wrapper } from "./style";
+import { BannerInfo } from "../components/atm.banner-info";
 
-export const HomePage = () => {
+export const MoreInfoPage = () => {
   return (
     <>
       <Header />
       <Wrapper>
-        <Card />
+        <BannerInfo />
       </Wrapper>
     </>
   );
