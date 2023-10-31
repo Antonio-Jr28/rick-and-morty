@@ -1,10 +1,25 @@
 import React from "react";
 import { MyRoutes } from "./router/router";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 
-function App() {
+const httpLink = createHttpLink({
+  uri: "https://rickandmortyapi.com/graphql",
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
+export const App = () => {
   return (
-   <MyRoutes />
+    <ApolloProvider client={client}>
+      <MyRoutes />
+    </ApolloProvider>
   );
-}
-
-export default App;
+};
