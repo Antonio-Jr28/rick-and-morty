@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../components/atm.header";
 import { Card } from "../components/atm.card";
-import { Wrapper } from "./style";
+import { Title, CardsSection, WrapperHome } from "./style";
 import { useGetCharacters } from "../domain/get-character.use-case";
 
 interface Character {
@@ -14,9 +14,10 @@ export const HomePage = () => {
   const { characters, loading } = useGetCharacters();
 
   return (
-    <>
+    <WrapperHome>
       <Header />
-      <Wrapper>
+      <Title>Personagens</Title>
+      <CardsSection>
         {characters.map((character: Character) => (
           <Card
             loading={loading}
@@ -26,7 +27,7 @@ export const HomePage = () => {
             name={character.name}
           />
         ))}
-      </Wrapper>
-    </>
+      </CardsSection>
+    </WrapperHome>
   );
 };
