@@ -4,6 +4,7 @@ import { Button } from "../atm.button";
 import { useNavigate } from "react-router-dom";
 import { BannerStyled, SpanStyled, Wrapperinfo } from "./banner-info.styled";
 import { bannerInfoString } from "./banner-info.string";
+import { loadavg } from "os";
 
 interface BannerInfoProps {
   name: string;
@@ -11,6 +12,7 @@ interface BannerInfoProps {
   status: string;
   species: string;
   gender: string;
+  loading: boolean;
 }
 
 export const BannerInfo = (props: BannerInfoProps) => {
@@ -20,22 +22,26 @@ export const BannerInfo = (props: BannerInfoProps) => {
     navigation("/");
   };
   return (
-    <BannerStyled>
+    <div>
       <h1>{props.name}</h1>
 
       <img src={props.image} alt={bannerInfoString.altImage}></img>
-      <Wrapperinfo>
+      <div>
         <p>{bannerInfoString.status}</p>
         <SpanStyled>{props.status}</SpanStyled>
         <p>{bannerInfoString.species}</p>
         <SpanStyled>{props.species}</SpanStyled>
         <p>{bannerInfoString.gender}</p>
         <SpanStyled>{props.gender}</SpanStyled>
-      </Wrapperinfo>
+      </div>
 
       <div>
-        <Button onClick={handleMore} text={bannerInfoString.button} />
+        <Button
+          onClick={handleMore}
+          loading={props.loading}
+          text={bannerInfoString.button}
+        />
       </div>
-    </BannerStyled>
+    </div>
   );
 };

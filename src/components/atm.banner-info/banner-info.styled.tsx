@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const BannerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #9aa94b;
   padding: 15px;
   border-radius: 25px;

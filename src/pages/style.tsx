@@ -7,3 +7,5 @@ export const Wrapper = styled.section`
   gap: 20px;
   padding: 10px;
 `;
+
+export const WrapperMoreInfo = styled.section``;
