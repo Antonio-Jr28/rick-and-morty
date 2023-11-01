@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { Color, FontFamily, FontSize } from "../obj.connstant/constant";
 
 export const TitleStyled = styled.h1`
   margin: 0;
-  padding: 2rem 1rem;
   text-align: center;
-  color: #11b1c9;
-  font-size: 5rem;
-  font-family: "Riick";
+  color: ${Color.Blue};
+  font-size: ${FontSize.XLarge};
+  font-family: ${FontFamily.Primary};
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #c9dc61;
+  -webkit-text-stroke-color: ${Color.Green};
 `;

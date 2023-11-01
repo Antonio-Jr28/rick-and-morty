@@ -15,7 +15,7 @@ export const Header = () => {
 
       <Navbar>
         <Link href="/">{headerString.home}</Link>
-        <Link href="/">{headerString.Episodio}</Link>
+        <Link href="/episodios">{headerString.Episodio}</Link>
       </Navbar>
     </Wrapper>
   );

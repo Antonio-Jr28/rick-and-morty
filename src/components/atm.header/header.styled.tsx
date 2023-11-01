@@ -1,21 +1,22 @@
 import styled from "styled-components";
+import { Color, FontSize, Padding } from "../obj.connstant/constant";
 
 export const Wrapper = styled.section`
-  background-color: black;
+  background-color: ${Color.Black};
   display: flex;
   align-items: center;
-  padding: 0 120px 0 120px;
+  padding: ${Padding.Large};
   justify-content: space-between;
   height: 100px;
 `;
 
 export const Link = styled.a`
-  color: #66beab;
-  font-size: 1.5rem;
+  color:${Color.Turquoise};
+  font-size: ${FontSize.Large};
   text-decoration: none;
   font-family: arial;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #c9dc61;
+  -webkit-text-stroke-color:  ${Color.Green};
 `;
 
 export const Navbar = styled.div`
