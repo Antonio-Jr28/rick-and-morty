@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
 
 export const Link = styled.a`
   color:${Color.Turquoise};
-  font-size: ${FontSize.Large};
+  font-size: ${FontSize.Medium};
   text-decoration: none;
   font-family: arial;
   -webkit-text-stroke-width: 1px;

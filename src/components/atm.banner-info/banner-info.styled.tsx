@@ -5,7 +5,7 @@ export const BannerStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${Color.gray};
+  background-color: ${Color.Turquoise};
   padding: ${Padding.Medium};
   border-radius: ${Border.Radius.Medium};
   text-align: center;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Border, Color, Padding } from "../obj.connstant/constant";
 
 export const CardStyled = styled.div`
-  background-color: ${Color.Turquoise} #66beab;
+  background-color: ${Color.Turquoise};
   padding: ${Padding.Medium};
   border-radius: ${Border.Radius.Large};
   text-align: center;
