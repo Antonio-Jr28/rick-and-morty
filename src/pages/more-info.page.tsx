@@ -9,7 +9,7 @@ import { Title } from "../components/atm.title/title.components";
 
 export const MoreInfoPage = () => {
   const { id } = useParams();
-  const { loading, characterData } = useCharacterData(`${id}`);
+  const { loading, characterData } = useCharacterData(id);
   
   return (
     <Background>

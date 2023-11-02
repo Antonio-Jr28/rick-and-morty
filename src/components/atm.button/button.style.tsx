@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Border, Color, FontSize } from "../obj.connstant/constant";
 
-export const Buttonstyled = styled.button`
+interface ButtonStyledProps {
+  color?: string;
+}
+
+export const ButtonStyledCss = css<ButtonStyledProps>`
   cursor: pointer;
   background: transparent;
   font-size: ${FontSize.Small};
@@ -11,6 +15,10 @@ export const Buttonstyled = styled.button`
   transition: 0.5s all ease-out;
   &:hover {
     background-color: ${Color.Black};
-    color: ${Color.Green};
+    color: ${(props) => (props.color ? props.color : Color.Green)};
   }
+`;
+
+export const ButtonStyled = styled.button<ButtonStyledProps>`
+  ${ButtonStyledCss}
 `;

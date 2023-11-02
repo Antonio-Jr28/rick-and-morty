@@ -1,4 +1,6 @@
-export const Color = {
+import { ColorName } from "./constant.modal";
+
+export const Color: ColorName = {
   Black: "#000000",
   White: "FFFFFF",
   Green: "#c9dc61",

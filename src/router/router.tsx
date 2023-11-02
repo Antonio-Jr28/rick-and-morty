@@ -10,7 +10,7 @@ export const MyRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/mais-informações/:id" element={<MoreInfoPage />} />
-        <Route path="//episodios" element={<EpisodesPage />} />
+        <Route path="/episodios" element={<EpisodesPage />} />
       </Routes>
     </BrowserRouter>
   );
