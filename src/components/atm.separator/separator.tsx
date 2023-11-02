@@ -1,6 +1,12 @@
-import { styled } from "styled-components";
-import { HeightSeparator } from "../obj.connstant/constant";
+import { styled, css } from "styled-components";
+export interface SeparatorStyledProps {
+  spacing?: string;
+}
 
-export const Separator = styled.div`
-  height: ${HeightSeparator.Small};
+export const SeparatorStyledCss = css<SeparatorStyledProps>`
+  height: ${(props) => (props.spacing ? props.spacing : "20px")};
+`;
+
+export const Separator = styled.div<SeparatorStyledProps>`
+  ${SeparatorStyledCss}
 `;

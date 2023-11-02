@@ -27,7 +27,7 @@ export const Border = {
   Radius: {
     Small: "5px",
     Medium: "10px",
-    Large: "20px"
+    Large: "20px",
   },
 };
 
@@ -37,14 +37,14 @@ export const Padding = {
 };
 
 export const FontSize = {
-    Small: "14px",
-    Medium: "24px",
-    Large: "34px",
-    XLarge: "100px",
+  Small: "14px",
+  Medium: "24px",
+  Large: "34px",
+  XLarge: "100px",
 };
 
 export const HeightSeparator = {
-    Small: "20px",
-    Medium: "30px",
-    Large: "40px",
+  Small: "20px",
+  Medium: "30px",
+  Large: "40px",
 };
