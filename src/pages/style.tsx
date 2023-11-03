@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { Color, Padding } from "../components/obj.connstant/constant";
 
 export const Background = styled.div`
-  background-color: ${Color.gray};
+  background-image: linear-gradient(
+    to right,
+    #272929,
+    #50298ce3,
+    #15053c,
+    #330654
+  );
 `;
 
 export const CardsSection = styled.section`
@@ -17,16 +23,23 @@ export const WrapperMoreInfo = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: ${Color.gray};
-  height: 880px;
 `;
 
 export const WrapperSearch = styled.div`
-  background-color: darkgray;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 
   input {
-    font-size: 25px;
+    all: unset;
+    color: ${Color.Black};
+    padding: 1rem;
+    border: 1px solid ${Color.Blue};
+    border-radius: 10px;
+    transition: 150ms cubic-bezier(0.81, 0.18, 0, 0.82);
+  }
+
+  input:focus {
+    border: 4px solid ${Color.Green};
+    color: ${Color.Green};
   }
 `;

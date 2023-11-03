@@ -23,18 +23,17 @@ export const HomePage = () => {
       character.name.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredCharacters(filtered);
-
   }, [search, characters]);
   return (
     <Background>
       <Header />
       <Separator />
       <Title text="Personagens" />
-      <Separator spacing="80px" />
+
       <WrapperSearch>
         <input
           type="text"
-          placeholder="Pesquisar personagens"
+          placeholder="Pesquisar personagem"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />

@@ -14,6 +14,7 @@ export const MoreInfoPage = () => {
   return (
     <Background>
       <Header />
+      <Separator />
       <Title text="Detalhes dos Personagens" />
       <WrapperMoreInfo>
         <Separator />
