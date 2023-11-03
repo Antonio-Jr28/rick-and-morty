@@ -29,6 +29,7 @@ export const Card = (props: CardProps) => {
 
       <div>
         <Button
+          variant="callToAction"
           loading={props.loading}
           onClick={onRedirect}
           text={cardString.button}

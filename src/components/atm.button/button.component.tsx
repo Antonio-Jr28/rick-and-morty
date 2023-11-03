@@ -1,13 +1,14 @@
 import React from "react";
-import { ButtonStyled} from "./button.style";
+import { ButtonStyled, VariantTypes } from "./button.style";
 import { BaseColor } from "../obj.connstant/constant.modal";
 
 interface CustomButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
-  onClick: () => void | undefined;
+  onClick?: () => void | undefined;
   text: string;
   color?: BaseColor | string;
+  variant?: VariantTypes;
 }
 
 export const Button: React.FC<CustomButtonProps> = ({
@@ -15,10 +16,16 @@ export const Button: React.FC<CustomButtonProps> = ({
   onClick,
   text,
   color,
+  variant,
   ...rest
 }) => {
   return (
-    <ButtonStyled color={color} {...rest} onClick={onClick}>
+    <ButtonStyled
+      color={color}
+      variant="primary"
+      {...rest}
+      onClick={onClick}
+    >
       {loading ? "Carregando..." : text}
     </ButtonStyled>
   );
