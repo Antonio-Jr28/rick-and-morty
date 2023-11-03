@@ -6,7 +6,6 @@ import { Title } from "../components/atm.title/title.components";
 import { Separator } from "../components/atm.separator";
 import { Button } from "../components/atm.button";
 import { useCharactersByPage } from "../domain/get-character-page.use-case";
-import { Color } from "../components/obj.connstant";
 
 interface Character {
   id: string;
