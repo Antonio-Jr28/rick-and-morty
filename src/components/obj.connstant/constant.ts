@@ -33,7 +33,7 @@ export const Border = {
 
 export const Padding = {
   Medium: "15px",
-  Large: "0 120px 0 120px",
+  Large: "0 195px 0 195px",
 };
 
 export const FontSize = {

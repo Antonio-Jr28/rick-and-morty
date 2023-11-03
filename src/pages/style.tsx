@@ -6,8 +6,8 @@ export const Background = styled.div`
 `;
 
 export const CardsSection = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: ${Padding.Large};
 `;
@@ -19,4 +19,14 @@ export const WrapperMoreInfo = styled.section`
   justify-content: center;
   background-color: ${Color.gray};
   height: 880px;
+`;
+
+export const WrapperSearch = styled.div`
+  background-color: darkgray;
+  text-align: center;
+  padding: 20px;
+
+  input {
+    font-size: 25px;
+  }
 `;

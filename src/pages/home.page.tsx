@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { Header } from "../components/atm.header";
 import { Card } from "../components/atm.card";
-import { CardsSection, Background } from "./style";
+import { CardsSection, Background, WrapperSearch } from "./style";
 import { useGetCharacters } from "../domain/get-character.use-case";
 import { Title } from "../components/atm.title/title.components";
+import { Separator } from "../components/atm.separator";
 
 interface Character {
   id: string;
@@ -13,13 +15,33 @@ interface Character {
 
 export const HomePage = () => {
   const { characters, loading } = useGetCharacters();
+  const [search, setSearch] = useState("");
+  const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
+  useEffect(() => {
+    const filtered = characters.filter((character: { name: string }) =>
+      character.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredCharacters(filtered);
+
+  }, [search, characters]);
   return (
     <Background>
       <Header />
+      <Separator />
       <Title text="Personagens" />
+      <Separator spacing="80px" />
+      <WrapperSearch>
+        <input
+          type="text"
+          placeholder="Pesquisar personagens"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+        />
+      </WrapperSearch>
+      <Separator />
       <CardsSection>
-        {characters.map((character: Character) => (
+        {filteredCharacters.map((character: Character) => (
           <Card
             loading={loading}
             id={character.id}
@@ -29,6 +51,7 @@ export const HomePage = () => {
           />
         ))}
       </CardsSection>
+      <Separator spacing="80px" />
     </Background>
   );
 };
