@@ -18,7 +18,7 @@ export const CardsSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: ${Padding.Large};
+  padding: ${Padding.Small};
 `;
 
 export const WrapperMoreInfo = styled.section`
