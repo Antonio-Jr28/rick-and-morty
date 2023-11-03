@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
-import { GET_PAGE_CHARACTER } from "../data/character-page";
+import { getPageCharacter } from "../data/character-page";
 
-export const useCustomCharactersByPage = (page: number, pageSize: number) => {
-  const { loading, error, data } = useQuery(GET_PAGE_CHARACTER, {
+export const useCharactersByPage = (page: number, pageSize: number) => {
+  const { loading, error, data } = useQuery(getPageCharacter, {
     variables: { page, pageSize },
   });
 

@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_PAGE_CHARACTER = gql`
+export const getPageCharacter = gql`
   query GET_PAGE_CHARACTER($page: Int!) {
     characters(page: $page) {
       info {
@@ -17,4 +17,3 @@ export const GET_PAGE_CHARACTER = gql`
     }
   }
 `;
-

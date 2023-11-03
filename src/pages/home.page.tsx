@@ -5,7 +5,8 @@ import { CardsSection, Background, WrapperSearch } from "./style";
 import { Title } from "../components/atm.title/title.components";
 import { Separator } from "../components/atm.separator";
 import { Button } from "../components/atm.button";
-import { useCustomCharactersByPage } from "../domain/get-character-page.use-case";
+import { useCharactersByPage } from "../domain/get-character-page.use-case";
+import { Color } from "../components/obj.connstant";
 
 interface Character {
   id: string;
@@ -15,13 +16,10 @@ interface Character {
 
 export const HomePage = () => {
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1); 
+  const [page, setPage] = useState(1);
   const pageSize = 30;
 
-  const { characters, loading } = useCustomCharactersByPage(
-    page,
-    pageSize
-  );
+  const { characters, loading } = useCharactersByPage(page, pageSize);
 
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
@@ -68,7 +66,7 @@ export const HomePage = () => {
           />
         ))}
       </CardsSection>
-
+      <Separator />
       <div>
         <Button text="Anterior" onClick={handlePreviousPage} />
         <Button text="Próxima" onClick={handleNextPage} />

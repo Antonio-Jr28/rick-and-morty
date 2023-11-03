@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Color, Padding } from "../components/obj.connstant/constant";
 
 export const Background = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: linear-gradient(
     to right,
     #272929,
