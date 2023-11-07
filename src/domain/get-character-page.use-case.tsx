@@ -7,16 +7,16 @@ export const useCharactersByPage = (page: number, pageSize: number) => {
   });
 
   if (loading) {
-    return { loading: true, error: null, characters: [] };
+    return { loading, error: null, characters: [] };
   }
 
   if (error) {
-    return { loading: false, error, characters: [] };
+    return { loading, error, characters: [] };
   }
 
   const characters = data?.characters?.results || [];
 
-  return { loading: false, error: null, characters };
+  return { loading, error: null, characters };
 };
 
 

@@ -16,9 +16,9 @@ interface Character {
 export const HomePage = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const pageSize = 30;
+  const limit = 30;
 
-  const { characters, loading } = useCharactersByPage(page, pageSize);
+  const { characters, loading } = useCharactersByPage(page, limit);
 
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
