@@ -67,8 +67,16 @@ export const HomePage = () => {
       </CardsSection>
       <Separator />
       <div>
-        <Button text="Anterior" onClick={handlePreviousPage} />
-        <Button text="Próxima" onClick={handleNextPage} />
+        <Button
+          variant="callToAction"
+          text="Anterior"
+          onClick={handlePreviousPage}
+        />
+        <Button
+          variant="callToAction"
+          text="Próxima"
+          onClick={handleNextPage}
+        />
       </div>
 
       <Separator spacing="80px" />
