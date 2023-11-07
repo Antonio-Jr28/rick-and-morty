@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/atm.header";
-import { Card } from "../../components/atm.card";
 import { Background } from "../style";
 import { Title } from "../../components/atm.title/title.components";
 import { Separator } from "../../components/atm.separator";
@@ -9,6 +8,10 @@ import { useCharactersByPage } from "../../domain/get-character-page.use-case";
 import { useNavigate } from "react-router-dom";
 import { CardsSection, WrapperButton, WrapperSearch } from "./home.styled";
 import { homeStrings } from "./home.strings";
+import { Card } from "../../context/card.context";
+import { CharactersCard } from "./components/characters-card";
+import { CardTitle } from "./components/card-title";
+import { CardImage } from "./components/card-image";
 
 interface Character {
   id: string;
@@ -24,15 +27,17 @@ export const HomePage = () => {
   const limit = 30;
 
   const { characters, loading } = useCharactersByPage(page, limit);
-
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
+
+  const [cards, setCards] = useState<{ cards: Card[] } | null>();
 
   useEffect(() => {
     const filtered = characters.filter((character: Character) =>
-      character.name.toLowerCase().includes(search.toLowerCase())
+      character.name.toLowerCase().includes(search.toLowerCase()),
+      setCards(cards)
     );
     setFilteredCharacters(filtered);
-  }, [search, characters]);
+  }, [search, characters, cards]);
 
   const handlePreviousPage = () => {
     if (page > 1) {
@@ -51,7 +56,9 @@ export const HomePage = () => {
   return (
     <Background>
       <Header />
+
       <Separator />
+
       <Title text={homeStrings.title} />
 
       <WrapperSearch>
@@ -62,24 +69,29 @@ export const HomePage = () => {
           onChange={(event) => setSearch(event.target.value)}
         />
       </WrapperSearch>
+
       <Separator />
+
       <CardsSection>
         {filteredCharacters.map((character: Character) => (
-          <Card key={character.id}>
-            <img src={character.image} alt={homeStrings.altImg} />
-
-            <h1>{character.name}</h1>
-
+          <CharactersCard
+            key={character.id}
+            card={{ img: character.image, name: character.name }}
+          >
+            <CardImage />
+            <CardTitle />
             <Button
               loading={loading}
               variant="primary"
               onClick={() => onRedirect(character.id)}
               text={homeStrings.InfoButton}
             />
-          </Card>
+          </CharactersCard>
         ))}
       </CardsSection>
+
       <Separator />
+
       <WrapperButton>
         <Button
           variant="callToAction"
@@ -97,3 +109,11 @@ export const HomePage = () => {
     </Background>
   );
 };
+
+// <Cards key={character.id}>
+//             <img src={character.image} alt={homeStrings.altImg} />
+
+//             <h1>{character.name}</h1>
+
+//            
+//           </Cards>

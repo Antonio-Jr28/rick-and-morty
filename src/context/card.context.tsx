@@ -5,7 +5,7 @@ export interface Card {
   name: string;
 }
 
-const CardContext = React.createContext<{ card: Card } | null>(null);
+export const CardContext = React.createContext<{ card: Card } | null>(null);
 
 export const useCardContext = () => {
   const context = React.useContext(CardContext);
