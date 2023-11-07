@@ -6,6 +6,7 @@ export const CardsSection = styled.section`
   flex-wrap: wrap;
   gap: 20px;
   padding: ${Padding.Small};
+  justify-content: center;
 `;
 
 export const WrapperSearch = styled.div`
@@ -25,4 +26,10 @@ export const WrapperSearch = styled.div`
     border: 4px solid ${Color.Green};
     color: ${Color.Green};
   }
+`;
+
+export const WrapperButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;

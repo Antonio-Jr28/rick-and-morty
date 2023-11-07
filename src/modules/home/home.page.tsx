@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../../components/atm.header";
 import { Card } from "../../components/atm.card";
-import { Background, } from "../style";
+import { Background } from "../style";
 import { Title } from "../../components/atm.title/title.components";
 import { Separator } from "../../components/atm.separator";
 import { Button } from "../../components/atm.button";
 import { useCharactersByPage } from "../../domain/get-character-page.use-case";
 import { useNavigate } from "react-router-dom";
-import { CardsSection, WrapperSearch } from "./home.styled";
+import { CardsSection, WrapperButton, WrapperSearch } from "./home.styled";
 import { homeStrings } from "./home.strings";
 
 interface Character {
@@ -80,7 +80,7 @@ export const HomePage = () => {
         ))}
       </CardsSection>
       <Separator />
-      <div>
+      <WrapperButton>
         <Button
           variant="callToAction"
           text={homeStrings.previousButton}
@@ -91,7 +91,7 @@ export const HomePage = () => {
           text={homeStrings.nextButton}
           onClick={handleNextPage}
         />
-      </div>
+      </WrapperButton>
 
       <Separator spacing="80px" />
     </Background>
