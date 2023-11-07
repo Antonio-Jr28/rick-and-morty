@@ -8,7 +8,6 @@ import { useCharactersByPage } from "../../domain/get-character-page.use-case";
 import { useNavigate } from "react-router-dom";
 import { CardsSection, WrapperButton, WrapperSearch } from "./home.styled";
 import { homeStrings } from "./home.strings";
-import { Card } from "../../context/card.context";
 import { CharactersCard } from "./components/characters-card";
 import { CardTitle } from "./components/card-title";
 import { CardImage } from "./components/card-image";
@@ -29,15 +28,12 @@ export const HomePage = () => {
   const { characters, loading } = useCharactersByPage(page, limit);
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
-  const [cards, setCards] = useState<{ cards: Card[] } | null>();
-
   useEffect(() => {
     const filtered = characters.filter((character: Character) =>
-      character.name.toLowerCase().includes(search.toLowerCase()),
-      setCards(cards)
+      character.name.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredCharacters(filtered);
-  }, [search, characters, cards]);
+  }, [search, characters]);
 
   const handlePreviousPage = () => {
     if (page > 1) {
@@ -109,11 +105,3 @@ export const HomePage = () => {
     </Background>
   );
 };
-
-// <Cards key={character.id}>
-//             <img src={character.image} alt={homeStrings.altImg} />
-
-//             <h1>{character.name}</h1>
-
-//            
-//           </Cards>
