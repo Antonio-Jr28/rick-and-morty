@@ -8,6 +8,7 @@ import { Button } from "../../components/atm.button";
 import { useCharactersByPage } from "../../domain/get-character-page.use-case";
 import { useNavigate } from "react-router-dom";
 import { CardsSection, WrapperSearch } from "./home.styled";
+import { homeStrings } from "./home.strings";
 
 interface Character {
   id: string;
@@ -51,12 +52,12 @@ export const HomePage = () => {
     <Background>
       <Header />
       <Separator />
-      <Title text="Personagens" />
+      <Title text={homeStrings.title} />
 
       <WrapperSearch>
         <input
           type="text"
-          placeholder="Pesquisar personagem"
+          placeholder={homeStrings.inputSearch.placdholder}
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
@@ -65,7 +66,7 @@ export const HomePage = () => {
       <CardsSection>
         {filteredCharacters.map((character: Character) => (
           <Card key={character.id}>
-            <img src={character.image} alt="teste" />
+            <img src={character.image} alt={homeStrings.altImg} />
 
             <h1>{character.name}</h1>
 
@@ -73,7 +74,7 @@ export const HomePage = () => {
               loading={loading}
               variant="primary"
               onClick={() => onRedirect(character.id)}
-              text="Mais informações"
+              text={homeStrings.InfoButton}
             />
           </Card>
         ))}
@@ -82,12 +83,12 @@ export const HomePage = () => {
       <div>
         <Button
           variant="callToAction"
-          text="Anterior"
+          text={homeStrings.previousButton}
           onClick={handlePreviousPage}
         />
         <Button
           variant="callToAction"
-          text="Próxima"
+          text={homeStrings.nextButton}
           onClick={handleNextPage}
         />
       </div>
