@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Header } from "../components/atm.header";
-import { Card } from "../components/atm.card";
-import { CardsSection, Background, WrapperSearch } from "./style";
-import { Title } from "../components/atm.title/title.components";
-import { Separator } from "../components/atm.separator";
-import { Button } from "../components/atm.button";
-import { useCharactersByPage } from "../domain/get-character-page.use-case";
+import { Header } from "../../components/atm.header";
+import { Card } from "../../components/atm.card";
+import { Background, } from "../style";
+import { Title } from "../../components/atm.title/title.components";
+import { Separator } from "../../components/atm.separator";
+import { Button } from "../../components/atm.button";
+import { useCharactersByPage } from "../../domain/get-character-page.use-case";
+import { useNavigate } from "react-router-dom";
+import { CardsSection, WrapperSearch } from "./home.styled";
 
 interface Character {
   id: string;
@@ -14,6 +16,8 @@ interface Character {
 }
 
 export const HomePage = () => {
+  const navigation = useNavigate();
+
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const limit = 30;
@@ -39,6 +43,10 @@ export const HomePage = () => {
     setPage(page + 1);
   };
 
+  const onRedirect = (id: string) => {
+    navigation(`/Mais-informações/${id}`);
+  };
+
   return (
     <Background>
       <Header />
@@ -56,13 +64,18 @@ export const HomePage = () => {
       <Separator />
       <CardsSection>
         {filteredCharacters.map((character: Character) => (
-          <Card
-            loading={loading}
-            id={character.id}
-            key={character.id}
-            image={character.image}
-            name={character.name}
-          />
+          <Card key={character.id}>
+            <img src={character.image} alt="teste" />
+
+            <h1>{character.name}</h1>
+
+            <Button
+              loading={loading}
+              variant="primary"
+              onClick={() => onRedirect(character.id)}
+              text="Mais informações"
+            />
+          </Card>
         ))}
       </CardsSection>
       <Separator />

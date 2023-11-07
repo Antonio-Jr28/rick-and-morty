@@ -1,11 +1,12 @@
 import React from "react";
-import { Header } from "../components/atm.header";
-import { BannerInfo } from "../components/atm.banner-info";
-import { useCharacterData } from "../domain/get-character-info.use-case";
+import { Header } from "../../components/atm.header";
+import { BannerInfo } from "../../components/atm.banner-info";
+import { useCharacterData } from "../../domain/get-character-info.use-case";
 import { useParams } from "react-router-dom";
-import { Background, WrapperMoreInfo } from "./style";
-import { Title } from "../components/atm.title/title.components";
-import { Separator } from "../components/atm.separator";
+import { Background, } from "../style";
+import { Title } from "../../components/atm.title/title.components";
+import { Separator } from "../../components/atm.separator";
+import { WrapperMoreInfo } from "./more-info.style";
 
 export const MoreInfoPage = () => {
   const { id } = useParams();

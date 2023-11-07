@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "../pages/home.page";
-import { MoreInfoPage } from "../pages/more-info.page";
-import { EpisodesPage } from "../pages/episodes.page";
+import { HomePage } from "../modules/home/home.page";
+import { MoreInfoPage } from "../modules/information/more-info.page";
+import { EpisodesPage } from "../modules/episodes/episodes.page";
 
 export const MyRoutes = () => {
   return (
