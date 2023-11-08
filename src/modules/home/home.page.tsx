@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { Header } from "../../components/atm.header";
 import { Background } from "../style";
 import { Title } from "../../components/atm.title/title.components";
@@ -36,17 +37,15 @@ export const HomePage = () => {
   }, [search, characters]);
 
   const handlePreviousPage = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
+    setPage((prevPage) => prevPage - 1);
   };
 
   const handleNextPage = () => {
-    setPage(page + 1);
+    setPage((prevPage) => prevPage + 1);
   };
 
   const onRedirect = (id: string) => {
-    navigation(`/Mais-informações/${id}`);
+    navigation(`/mais-informações/${id}`);
   };
 
   return (
