@@ -67,7 +67,7 @@ export const HomePage = () => {
         />
       </div>
 
-      <div className="flex flex-wrap col-lg-8 col-12 justify-center shadow-xl gap-6 p-6">
+      <div className="flex flex-wrap justify-center shadow-xl gap-6 p-6">
         {filteredCharacters.map((character: Character) => (
           <CharactersCard
             key={character.id}
