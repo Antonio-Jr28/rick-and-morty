@@ -2,12 +2,6 @@ import React from "react";
 
 import { Button } from "../atm.button";
 import { useNavigate } from "react-router-dom";
-import {
-  BannerStyled,
-  ImageStyled,
-  SpanStyled,
-  Wrapperinfo,
-} from "./banner-info.styled";
 import { bannerInfoString } from "./banner-info.string";
 
 interface BannerInfoProps {
@@ -26,22 +20,19 @@ export const BannerInfo = (props: BannerInfoProps) => {
     navigation("/");
   };
   return (
-    <BannerStyled>
+    <div>
       <h1>{props.name}</h1>
 
-      <ImageStyled
-        src={props.image}
-        alt={bannerInfoString.altImage}
-      ></ImageStyled>
+      <img src={props.image} alt={bannerInfoString.altImage}></img>
 
-      <Wrapperinfo>
+      <div>
         <p>{bannerInfoString.status}</p>
-        <SpanStyled>{props.status}</SpanStyled>
+        <span>{props.status}</span>
         <p>{bannerInfoString.species}</p>
-        <SpanStyled>{props.species}</SpanStyled>
+        <span>{props.species}</span>
         <p>{bannerInfoString.gender}</p>
-        <SpanStyled>{props.gender}</SpanStyled>
-      </Wrapperinfo>
+        <span>{props.gender}</span>
+      </div>
 
       <div>
         <Button
@@ -50,6 +41,6 @@ export const BannerInfo = (props: BannerInfoProps) => {
           text={bannerInfoString.button}
         />
       </div>
-    </BannerStyled>
+    </div>
   );
 };

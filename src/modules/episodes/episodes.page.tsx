@@ -1,12 +1,11 @@
 import React from "react";
 import { Header } from "../../components/atm.header";
 import { Title } from "../../components/atm.title/title.components";
-import { Background } from "../style";
 import { FiltroLista } from "../../components/atm.episodes-card/episodes-card.component";
 
 export const EpisodesPage = () => {
   return (
-    <Background>
+    <div>
       <Header />
       <div
         style={{
@@ -18,6 +17,6 @@ export const EpisodesPage = () => {
         <Title text="Episódios" />
         <FiltroLista />
       </div>
-    </Background>
+    </div>
   );
 };

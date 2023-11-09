@@ -3,10 +3,7 @@ import { Header } from "../../components/atm.header";
 import { BannerInfo } from "../../components/atm.banner-info";
 import { useCharacterData } from "../../domain/get-character-info.use-case";
 import { useParams } from "react-router-dom";
-import { Background, } from "../style";
 import { Title } from "../../components/atm.title/title.components";
-import { Separator } from "../../components/atm.separator";
-import { WrapperMoreInfo } from "./more-info.style";
 import { moreInfoString } from "./more-info.string";
 
 export const MoreInfoPage = () => {
@@ -14,12 +11,12 @@ export const MoreInfoPage = () => {
   const { loading, characterData } = useCharacterData(id);
 
   return (
-    <Background>
+    <div>
       <Header />
-      <Separator />
+
       <Title text={moreInfoString.title} />
-      <WrapperMoreInfo>
-        <Separator />
+      <div>
+
         <BannerInfo
           loading={loading}
           name={characterData?.name}
@@ -28,8 +25,8 @@ export const MoreInfoPage = () => {
           image={characterData?.image}
           status={characterData?.status}
         />
-        <Separator />
-      </WrapperMoreInfo>
-    </Background>
+
+      </div>
+    </div>
   );
 };

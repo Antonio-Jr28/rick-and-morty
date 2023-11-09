@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Separator } from "../atm.separator";
-import { WrapperEpisodesCard } from "./episodes-card.style";
 
 export const FiltroLista = () => {
   const [itens, setItens] = useState([
@@ -26,7 +24,6 @@ export const FiltroLista = () => {
   return (
     <>
       <div>
-        <Separator />
         <input
           type="text"
           placeholder="Filtrar Itens"
@@ -43,7 +40,7 @@ export const FiltroLista = () => {
       <div>
         <h2> Episódios </h2>
 
-        <WrapperEpisodesCard>
+        <div>
           <img
             src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
             alt="episódios"
@@ -52,8 +49,7 @@ export const FiltroLista = () => {
           <span>name</span>
           <span>Lançado</span>
           <span>Episódio</span>
-        </WrapperEpisodesCard>
-        <Separator />
+        </div>
       </div>
     </>
   );

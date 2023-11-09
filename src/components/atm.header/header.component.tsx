@@ -1,22 +1,22 @@
 import React from "react";
 
-import { Link, Navbar, Wrapper } from "./header.styled";
 import { headerString } from "./header.string";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const IMAGE_WIDTH = "20%";
   return (
-    <Wrapper>
+    <nav>
       <img
         alt={headerString.altImage}
         width={IMAGE_WIDTH}
         src={headerString.srcImageLogo}
       />
 
-      <Navbar>
-        <Link href="/">{headerString.home}</Link>
-        <Link href="/episodios">{headerString.Episodio}</Link>
-      </Navbar>
-    </Wrapper>
+      <div>
+        <Link to="/">{headerString.home}</Link>
+        <Link to="/episodios">{headerString.Episodio}</Link>
+      </div>
+    </nav>
   );
 };

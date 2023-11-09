@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import { Header } from "../../components/atm.header";
-import { Background } from "../style";
 import { Title } from "../../components/atm.title/title.components";
-import { Separator } from "../../components/atm.separator";
 import { Button } from "../../components/atm.button";
 import { useCharactersByPage } from "../../domain/get-character-page.use-case";
 import { useNavigate } from "react-router-dom";
-import { CardsSection, WrapperButton, WrapperSearch } from "./home.styled";
 import { homeStrings } from "./home.strings";
 import { CharactersCard } from "./components/characters-card";
 import { CardTitle } from "./components/card-title";
@@ -49,25 +46,21 @@ export const HomePage = () => {
   };
 
   return (
-    <Background>
+    <div>
       <Header />
-
-      <Separator />
 
       <Title text={homeStrings.title} />
 
-      <WrapperSearch>
+      <div>
         <input
           type="text"
           placeholder={homeStrings.inputSearch.placdholder}
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
-      </WrapperSearch>
+      </div>
 
-      <Separator />
-
-      <CardsSection>
+      <section>
         {filteredCharacters.map((character: Character) => (
           <CharactersCard
             key={character.id}
@@ -77,30 +70,20 @@ export const HomePage = () => {
             <CardTitle />
             <Button
               loading={loading}
-              variant="primary"
               onClick={() => onRedirect(character.id)}
               text={homeStrings.InfoButton}
             />
           </CharactersCard>
         ))}
-      </CardsSection>
+      </section>
 
-      <Separator />
-
-      <WrapperButton>
+      <div>
         <Button
-          variant="callToAction"
           text={homeStrings.previousButton}
           onClick={handlePreviousPage}
         />
-        <Button
-          variant="callToAction"
-          text={homeStrings.nextButton}
-          onClick={handleNextPage}
-        />
-      </WrapperButton>
-
-      <Separator spacing="80px" />
-    </Background>
+        <Button text={homeStrings.nextButton} onClick={handleNextPage} />
+      </div>
+    </div>
   );
 };
