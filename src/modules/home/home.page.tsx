@@ -59,7 +59,7 @@ export const HomePage = () => {
         <FiSearch className="text-gray-500 ml-2" />
 
         <input
-          className="bg-slate-200"
+          className="bg-slate-200 focus:outline-none"
           type="text"
           placeholder={homeStrings.inputSearch.placdholder}
           value={search}
@@ -71,7 +71,11 @@ export const HomePage = () => {
         {filteredCharacters.map((character: Character) => (
           <CharactersCard
             key={character.id}
-            card={{ img: character.image, name: character.name, species: character.species  }}
+            card={{
+              img: character.image,
+              name: character.name,
+              species: character.species,
+            }}
           >
             <CardImage />
             <CardTitle />
