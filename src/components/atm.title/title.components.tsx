@@ -5,5 +5,5 @@ interface TitleProps {
 }
 
 export const Title = (props: TitleProps): JSX.Element => {
-  return <h1>{props.text}</h1>;
+  return <h1 className="font-rick text-3xl font-bold">{props.text}</h1>;
 };

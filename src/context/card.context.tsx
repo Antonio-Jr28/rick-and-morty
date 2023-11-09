@@ -3,6 +3,7 @@ import React from "react";
 export interface Card {
   img: string;
   name: string;
+  species: string;
 }
 
 export const CardContext = React.createContext<{ card: Card } | null>(null);

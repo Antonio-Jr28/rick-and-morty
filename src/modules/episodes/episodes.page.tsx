@@ -1,12 +1,12 @@
 import React from "react";
-import { Header } from "../../components/atm.header";
+import { Navbar } from "../../components/atm.navbar";
 import { Title } from "../../components/atm.title/title.components";
 import { FiltroLista } from "../../components/atm.episodes-card/episodes-card.component";
 
 export const EpisodesPage = () => {
   return (
     <div>
-      <Header />
+      <Navbar />
       <div
         style={{
           display: "flex",

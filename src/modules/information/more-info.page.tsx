@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../../components/atm.header";
+import { Navbar } from "../../components/atm.navbar";
 import { BannerInfo } from "../../components/atm.banner-info";
 import { useCharacterData } from "../../domain/get-character-info.use-case";
 import { useParams } from "react-router-dom";
@@ -12,11 +12,10 @@ export const MoreInfoPage = () => {
 
   return (
     <div>
-      <Header />
+      <Navbar />
 
       <Title text={moreInfoString.title} />
       <div>
-
         <BannerInfo
           loading={loading}
           name={characterData?.name}
@@ -25,7 +24,6 @@ export const MoreInfoPage = () => {
           image={characterData?.image}
           status={characterData?.status}
         />
-
       </div>
     </div>
   );
