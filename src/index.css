@@ -6,5 +6,5 @@
 .bg-custom-image {
  background-image: url('./assets/img/rick-and-morty.svg');
  background-repeat: no-repeat;
- background-size: cover;
+ background-size: contain;
 }
