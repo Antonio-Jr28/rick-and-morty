@@ -36,6 +36,7 @@ export const BannerInfo = (props: BannerInfoProps) => {
 
       <div>
         <Button
+          type="secondary"
           onClick={handleMore}
           loading={props.loading}
           text={bannerInfoString.button}
