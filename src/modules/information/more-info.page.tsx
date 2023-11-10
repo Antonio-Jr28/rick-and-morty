@@ -11,10 +11,11 @@ export const MoreInfoPage = () => {
   const { loading, characterData } = useCharacterData(id);
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Navbar />
-
+      <div className="mt-10" />
       <Title text={moreInfoString.title} />
+      <div className="mt-10" />
       <div>
         <BannerInfo
           loading={loading}

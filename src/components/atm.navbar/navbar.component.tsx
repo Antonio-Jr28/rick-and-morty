@@ -13,7 +13,7 @@ export const Navbar = () => {
         src={navbarString.srcImageLogo}
       />
 
-      <div className="flex items-center gap-20 text-white text-3xl">
+      <div className="flex items-center gap-20 text-white text-2xl">
         <Link to="/">{navbarString.home}</Link>
         <Link to="/personagens">{navbarString.personagens}</Link>
         <Link to="/episodios">{navbarString.episodio}</Link>
