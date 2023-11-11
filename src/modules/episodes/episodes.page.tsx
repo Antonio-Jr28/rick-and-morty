@@ -31,14 +31,15 @@ export const EpisodesPage = () => {
           />
 
           {isCardExpanded && (
-            <div className="mt-4">
+            <div className="flex flex-row justify-around mt-10">
               <p>Informação adicional 1</p>
               <p>Informação adicional 2</p>
             </div>
           )}
 
-          <div className="mt-4" />
-          <Button type="primary" text="Mais informações" onClick={toggleCardExpansion} />
+          <div className="mt-10" />
+          
+          <Button type="primary" text={!isCardExpanded ? "Mais informações" : "fechar"} onClick={toggleCardExpansion} />
         </EpisodesCard>
       </div>
       <div className="mt-10" />
