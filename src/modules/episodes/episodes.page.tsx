@@ -22,7 +22,7 @@ export const EpisodesPage = () => {
   const handleNextPage = () => {
     setPage((prevPage) => prevPage + 1);
   };
-  console.log(episodes, "merda");
+
   return (
     <div className="flex flex-col items-center">
       <div className="mt-10" />
@@ -43,7 +43,7 @@ export const EpisodesPage = () => {
               }}
             >
               <div className="mt-4" />
-              
+
               <EpidodesTitle />
 
               <div className="mt-4" />
