@@ -2,9 +2,9 @@ import React from "react";
 
 export interface Episodes {
     name: string;
-      id: string;
-      airDate: string;
-      characters?: {};
+    id: string;
+    air_date: string;
+    characters?: {};
 }
 
 export const EpisodesContext = React.createContext<{ episodes: Episodes } | null>(null);
