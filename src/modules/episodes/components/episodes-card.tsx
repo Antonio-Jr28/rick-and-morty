@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
 import { EpisodesCard } from "../../../components/atm.episodes-card";
 
-import { EpisodesContext, Episodes } from "../../../context/epidodes-card.context";
+import { EpisodesContext, EpisodesData } from "../../../context/epidodes-card.context";
 
-export const EpisodesCards: React.FC<PropsWithChildren<{ episodes: Episodes }>> = ({
+export const EpisodesCards: React.FC<PropsWithChildren<{ episodes: EpisodesData }>> = ({
     children, 
     episodes,
 }) => {
