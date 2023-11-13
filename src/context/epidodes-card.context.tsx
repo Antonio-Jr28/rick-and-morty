@@ -4,7 +4,7 @@ export interface Episodes {
     name: string;
       id: string;
       airDate: string;
-      characters: {};
+      characters?: {};
 }
 
 export const EpisodesContext = React.createContext<{ episodes: Episodes } | null>(null);

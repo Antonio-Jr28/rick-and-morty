@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "../../components/atm.navbar";
 import { Title } from "../../components/atm.title/title.components";
-import { EpisodesCard } from "../../components/atm.episodes-card";
 import { Button } from "../../components/atm.button";
+import { EpisodesCards } from "./components/episodes-card";
+import { EpidodesTitle } from "./components/episodes.title";
+import { EpisodesAirDate } from "./components/episodes.data";
 
 export const EpisodesPage = () => {
-  const [isCardExpanded, setIsCardExpanded] = useState(false);
-
-
-  const toggleCardExpansion = () => {
-    setIsCardExpanded(!isCardExpanded);
-  };
 
   return (
     <div className="flex flex-col items-center">
@@ -20,27 +16,16 @@ export const EpisodesPage = () => {
       <Title text="Episódios" />
       <div>
         <div className="mt-10" />
-        <EpisodesCard isExpanded={isCardExpanded}>
+      <EpisodesCards key="1" episodes={{id: "1", name: "rick", airDate: "1010"}}>
+       
           <div className="mt-4" />
-          <h2 className="text-center">A hora da aventura</h2>
+        <EpidodesTitle />
           <div className="mt-4" />
-          <img
-            className="w-[600px] h-[300px] shadow-lg shadow-black"
-            src="https://rickandmortyapi.com/api/character/avatar/10.jpeg"
-            alt="imagens"
-          />
-
-          {isCardExpanded && (
-            <div className="flex flex-row justify-around mt-10">
-              <p>Informação adicional 1</p>
-              <p>Informação adicional 2</p>
-            </div>
-          )}
-
+         <EpisodesAirDate />
+         
           <div className="mt-10" />
           
-          <Button type="primary" text={!isCardExpanded ? "Mais informações" : "fechar"} onClick={toggleCardExpansion} />
-        </EpisodesCard>
+      </EpisodesCards>
       </div>
       <div className="mt-10" />
     </div>

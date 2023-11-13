@@ -1,7 +1,7 @@
 import React from "react";
 
 interface EpisodesCardProps {
-  isExpanded: boolean;
+  isExpanded?: boolean;
   onToggleExpansion?: () => void; 
 }
 
