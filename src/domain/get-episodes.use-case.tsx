@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { getEpisodes } from "../data/episodes.query";
 
-export const useGetEpisodes = (filter: any) => {
+export const useGetEpisodes = (filter: any, page: number, limit: number) => {
   const { loading, error, data } = useQuery(getEpisodes, {
-    variables: { filter },
+    variables: { filter, page, limit },
   });
 
   if (loading) {
