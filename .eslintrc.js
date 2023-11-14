@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['prettier', '@typescript-eslint', 'react'],
+  plugins: ['prettier-plugin-tailwindcss', '@typescript-eslint', 'react'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
