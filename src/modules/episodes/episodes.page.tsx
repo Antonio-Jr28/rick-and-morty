@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Navbar } from '../../components/atm.navbar';
 import { Title } from '../../components/atm.title/title.components';
 import { EpisodesCards } from './components/episodes-card';
@@ -12,7 +13,7 @@ import { EpisodesCharactersCard } from './components/episodes-characters-card';
 export const EpisodesPage = () => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({ name: '' });
-  const limit = 30;
+  const limit = 10;
 
   const { episodes, loading } = useGetEpisodes(filter, page, limit);
 
@@ -29,13 +30,13 @@ export const EpisodesPage = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col items-center bg-slate-200'>
       <div className='mt-10' />
       <Navbar />
       <div className='mt-10' />
       <Title text='Episódios' />
 
-      <div>
+      <div className='flex flex-col justify-center w-[200px]'>
         <select value={filter.name} onChange={handleSelectChange}>
           <option value=''>Selecione um Episódio</option>
           {episodes?.map((episode: EpisodesData) => (
@@ -48,7 +49,7 @@ export const EpisodesPage = () => {
 
         {loading && <p>Carregando...</p>}
 
-        <div>
+        <div className='flex flex-wrap justify-center gap-4'>
           {episodes?.map((episode: EpisodesData) => (
             <div key={episode?.id}>
               <EpisodesCards
