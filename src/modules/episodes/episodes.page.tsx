@@ -29,7 +29,7 @@ export const EpisodesPage = () => {
   };
 
   return (
-    <div className='flex flex-col items-center'>
+    <div>
       <div className='mt-10' />
       <Navbar />
       <div className='mt-10' />
@@ -48,7 +48,7 @@ export const EpisodesPage = () => {
 
         {loading && <p>Carregando...</p>}
 
-        <div className='flex flex-wrap gap-4 justify-around'>
+        <div>
           {episodes?.map((episode: EpisodesData) => (
             <div key={episode?.id}>
               <EpisodesCards

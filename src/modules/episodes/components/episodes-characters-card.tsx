@@ -8,7 +8,7 @@ export const EpisodesCharactersCard: React.FC = () => {
     <div>
       {episodes?.characters?.length > 0 ? (
         episodes.characters.map((character) => (
-          <div className='flex flex-wrap justify-between p-2' key={character?.id}>
+          <div key={character?.id}>
             <img className='rounded-full w-10 h-10 ' src={character.image} alt='Personagem' />
             <p>{character.name}</p>
           </div>
