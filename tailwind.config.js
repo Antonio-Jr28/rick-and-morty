@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        rick: ["Riick", "sans-serif"],
+        rick: ['Riick', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
-

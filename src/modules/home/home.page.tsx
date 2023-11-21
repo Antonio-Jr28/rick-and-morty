@@ -8,13 +8,12 @@ export const HomePage = () => {
     <div className='bg-custom-image h-[600px] lg:h-[1000px]'>
       <Navbar />
 
-      <div className="flex flex-row justify-center mt-44 gap-5">
-        
-        <div className="rounded-full w-60 h-24 border-2 shadow-lg flex items-center justify-around gap-4 text-black bg-cyan-200">
-          <Link to={"/personagens"}>Personagens</Link>
+      <div className='mt-44 flex flex-row justify-center gap-5'>
+        <div className='flex h-24 w-60 items-center justify-around gap-4 rounded-full border-2 bg-cyan-200 text-black shadow-lg'>
+          <Link to={'/personagens'}>Personagens</Link>
         </div>
 
-        <div className='rounded-full w-60 h-24 border-2 shadow-lg flex items-center justify-around gap-4 text-black bg-cyan-200'>
+        <div className='flex h-24 w-60 items-center justify-around gap-4 rounded-full border-2 bg-cyan-200 text-black shadow-lg'>
           <Link to={'/episodios'}>Episodios</Link>
         </div>
       </div>

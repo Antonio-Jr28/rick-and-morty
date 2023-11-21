@@ -1,51 +1,51 @@
-import { ColorName } from "./constant.modal";
+import { ColorName } from './constant.modal';
 
 export const Color: ColorName = {
-  Black: "#000000",
-  White: "FFFFFF",
-  Green: "#c9dc61",
-  Blue: "#11b1c9",
-  gray: "#808080",
-  Turquoise: "#66beab",
+  Black: '#000000',
+  White: 'FFFFFF',
+  Green: '#c9dc61',
+  Blue: '#11b1c9',
+  gray: '#808080',
+  Turquoise: '#66beab',
 };
 
 export enum FontFamily {
-  Primary = "Riick",
+  Primary = 'Riick',
 }
 
 export const HeaderHeight = {
-  Mobile: "64px",
-  Desktop: "80px",
+  Mobile: '64px',
+  Desktop: '80px',
 };
 
 export const Border = {
   Color: Color.Black,
   Width: {
-    Small: "2px",
-    Medium: "4px",
+    Small: '2px',
+    Medium: '4px',
   },
   Radius: {
-    Small: "5px",
-    Medium: "10px",
-    Large: "20px",
+    Small: '5px',
+    Medium: '10px',
+    Large: '20px',
   },
 };
 
 export const Padding = {
-  Small: "0 4% 0 4%",
-  Medium: "15px",
-  Large: "0 195px 0 195px",
+  Small: '0 4% 0 4%',
+  Medium: '15px',
+  Large: '0 195px 0 195px',
 };
 
 export const FontSize = {
-  Small: "14px",
-  Medium: "24px",
-  Large: "34px",
-  XLarge: "100px",
+  Small: '14px',
+  Medium: '24px',
+  Large: '34px',
+  XLarge: '100px',
 };
 
 export const HeightSeparator = {
-  Small: "20px",
-  Medium: "30px",
-  Large: "40px",
+  Small: '20px',
+  Medium: '30px',
+  Large: '40px',
 };

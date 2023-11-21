@@ -1,3 +1,3 @@
 export const moreInfoString = {
-  title: "Detalhes dos Personagens",
+  title: 'Detalhes dos Personagens',
 };

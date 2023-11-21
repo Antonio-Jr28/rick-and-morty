@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const getEpisodes = gql`
   query Query($filter: FilterEpisode) {

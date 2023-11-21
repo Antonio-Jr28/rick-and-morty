@@ -5,11 +5,11 @@ export const EpisodesCharactersCard: React.FC = () => {
   const { episodes } = useEpisodesContext();
 
   return (
-    <div className='flex flex-wrap gap-5 w-[500px] justify-center'>
+    <div className='flex w-[500px] flex-wrap justify-center gap-5'>
       {episodes?.characters?.length > 0 ? (
         episodes.characters.map((character) => (
           <div key={character?.id}>
-            <img className='rounded-full w-20 h-20 ' src={character.image} alt='Personagem' />
+            <img className='h-20 w-20 rounded-full ' src={character.image} alt='Personagem' />
           </div>
         ))
       ) : (

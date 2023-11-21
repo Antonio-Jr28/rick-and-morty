@@ -1,15 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { MyRoutes } from "./router/router";
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  createHttpLink,
-} from "@apollo/client";
+import { MyRoutes } from './router/router';
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: "https://rickandmortyapi.com/graphql",
+  uri: 'https://rickandmortyapi.com/graphql',
 });
 
 const client = new ApolloClient({
