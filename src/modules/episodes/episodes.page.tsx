@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
 import { Navbar } from '../../components/atm.navbar';
 import { Title } from '../../components/atm.title/title.components';
@@ -10,12 +10,16 @@ import { EpidodesTitle } from './components/episodes.title';
 import { EpisodesData } from '../../context/epidodes-card.context';
 import { EpisodesCharactersCard } from './components/episodes-characters-card';
 
+type FilterType = {
+  name: string,
+};
+
 export const EpisodesPage = () => {
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState({ name: '' });
+  const [filter, setFilter] = useState<FilterType>({ name: '' });
   const limit = 10;
 
-  const { episodes, loading } = useGetEpisodes(filter, page, limit);
+  const { episodes, loading } = useGetEpisodes(filter.name, page, limit);
 
   const handlePreviousPage = () => {
     setPage((prevPage) => prevPage - 1);
@@ -25,7 +29,7 @@ export const EpisodesPage = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const handleSelectChange = (e: { target: { value: any } }) => {
+  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setFilter({ name: e.target.value });
   };
 
@@ -36,7 +40,7 @@ export const EpisodesPage = () => {
       <div className='mt-10' />
       <Title text='Episódios' />
 
-      <div className='flex flex-col justify-center w-[200px]'>
+      <div className='flex w-[200px] flex-col justify-center'>
         <select value={filter.name} onChange={handleSelectChange}>
           <option value=''>Selecione um Episódio</option>
           {episodes?.map((episode: EpisodesData) => (
@@ -51,22 +55,21 @@ export const EpisodesPage = () => {
 
         <div className='flex flex-wrap justify-center gap-4'>
           {episodes?.map((episode: EpisodesData) => (
-            <div key={episode?.id}>
-              <EpisodesCards
-                episodes={{
-                  id: episode?.id,
-                  name: episode?.name,
-                  air_date: episode?.air_date,
-                  characters: episode?.characters,
-                }}>
-                <div className='mt-4' />
-                <EpidodesTitle />
-                <div className='mt-4' />
-                <EpisodesAirDate />
-                <div className='mt-10' />
-                <EpisodesCharactersCard />
-              </EpisodesCards>
-            </div>
+            <EpisodesCards
+              key={episode?.id}
+              episodes={{
+                id: episode?.id,
+                name: episode?.name,
+                air_date: episode?.air_date,
+                characters: episode?.characters,
+              }}>
+              <div className='mt-4' />
+              <EpidodesTitle />
+              <div className='mt-4' />
+              <EpisodesAirDate />
+              <div className='mt-10' />
+              <EpisodesCharactersCard />
+            </EpisodesCards>
           ))}
         </div>
 

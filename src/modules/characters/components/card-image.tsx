@@ -1,7 +1,9 @@
-import { useCardContext } from "../../../context/card.context";
+import React from 'react';
 
-export const CardImage: React.FC = () => {
-    const { card } = useCardContext();
+import { useCardContext } from '../../../context/card.context';
 
-    return <img className="rounded-full" src={card.img} alt="cards dos personagens"/>
-}
+export const CardImage: React.FC = (): JSX.Element => {
+  const { card } = useCardContext();
+
+  return <img className='rounded-full' src={card.img} alt='cards dos personagens' />;
+};

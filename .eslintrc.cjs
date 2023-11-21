@@ -3,12 +3,16 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:tailwindcss/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   overrides: [
     {
-      env: {
-        node: true,
-      },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script',
@@ -17,10 +21,10 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
-  plugins: ['prettier-plugin-tailwindcss', '@typescript-eslint', 'react'],
+  plugins: ['react', 'tailwindcss', 'prettier', '@typescript-eslint', 'react-hooks'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
