@@ -10,7 +10,7 @@ import { CardTitle } from "./components/card-title";
 import { CardImage } from "./components/card-image";
 import { FiSearch } from "react-icons/fi";
 import { CardSpecies } from "./components/card-species";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 interface Character {
   id: string;
@@ -30,8 +30,8 @@ export const CharactersPage = () => {
   const [filteredCharacters, setFilteredCharacters] = useState(characters);
 
   useEffect(() => {
-    const filtered = characters.filter((character: Character) =>
-      character.name.toLowerCase().includes(search.toLowerCase())
+    const filtered = characters?.filter((character: Character) =>
+      character?.name?.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredCharacters(filtered);
   }, [search, characters]);
@@ -68,13 +68,13 @@ export const CharactersPage = () => {
       </div>
 
       <div className="flex flex-wrap justify-center shadow-xl gap-6 p-6">
-        {filteredCharacters.map((character: Character) => (
+        {filteredCharacters?.map((character: Character) => (
           <CharactersCard
-            key={character.id}
+            key={character?.id}
             card={{
-              img: character.image,
-              name: character.name,
-              species: character.species,
+              img: character?.image,
+              name: character?.name,
+              species: character?.species,
             }}
           >
             <CardImage />
