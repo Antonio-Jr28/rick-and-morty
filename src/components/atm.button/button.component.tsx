@@ -16,13 +16,13 @@ export const Button: React.FC<CustomButtonProps> = ({
   onClick,
   text,
   color,
-  variant,
+  variant = "primary",
   ...rest
 }) => {
   return (
     <ButtonStyled
       color={color}
-      variant="primary"
+      variant={variant}
       {...rest}
       onClick={onClick}
     >

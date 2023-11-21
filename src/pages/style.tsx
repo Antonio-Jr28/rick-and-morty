@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Color, Padding } from "../components/obj.connstant/constant";
 
 export const Background = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: linear-gradient(
     to right,
     #272929,
@@ -15,7 +18,7 @@ export const CardsSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: ${Padding.Large};
+  padding: ${Padding.Small};
 `;
 
 export const WrapperMoreInfo = styled.section`

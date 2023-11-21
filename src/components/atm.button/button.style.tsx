@@ -13,25 +13,28 @@ const btnColors = (
 ): {
   hover: ButtonColor;
   selected: ButtonColor;
+  default: ButtonColor;
 } => {
   const solidColors = {
     primary: {
+      default: { bg: "#50298ce3", border: "#15053c", text: "#11b1c9" },
       hover: {
-        bg: "#000000",
-        border: "#FFFFFF", 
-        text: "#c9dc61",
+        bg: "Black",
+        border: "white",
+        text: "#11b1c9",
       },
       selected: {
-        bg: "#66beab",
+        bg: "transparent",
         border: "#000000",
-        text: "#FFFFFF", 
+        text: "FFFFFF",
       },
     },
     callToAction: {
+      default: { bg: "#c9dc61", border: "black", text: "#000000" },
       hover: {
         bg: "#c9dc61",
         border: "#000000",
-        text: "#000000",
+        text: "#11b1c9",
       },
       selected: {
         bg: "#11b1c9",
@@ -51,16 +54,26 @@ interface ButtonStyledProps {
 
 export const ButtonStyledCss = css<ButtonStyledProps>`
   cursor: pointer;
-  background-color: ${(props) => btnColors(props.variant)};
+  background-color: ${(props) =>
+    props.variant
+      ? btnColors(props.variant).default.bg
+      : btnColors(props.variant)};
   font-size: ${FontSize.Small};
   border-radius: ${Border.Radius.Small};
-  border-color: ${(props) => btnColors(props.variant)};
-  color: ${(props) => btnColors(props.variant)};
+  border-color: ${(props) =>
+    props.variant
+      ? btnColors(props.variant).default.border
+      : btnColors(props.variant)};
+  color: ${(props) =>
+    props.variant
+      ? btnColors(props.variant).default.text
+      : btnColors(props.variant)};
   padding: 0.25em 1em;
   transition: 0.5s all ease-out;
+
   &:hover {
     background-color: ${(props) => btnColors(props.variant).hover.bg};
-    color: ${(props) => btnColors(props.variant).selected.text};
+    color: ${(props) => btnColors(props.variant).hover.text};
   }
 
   &:active {

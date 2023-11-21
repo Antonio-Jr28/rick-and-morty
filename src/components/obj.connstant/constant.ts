@@ -32,6 +32,7 @@ export const Border = {
 };
 
 export const Padding = {
+  Small: "0 4% 0 4%",
   Medium: "15px",
   Large: "0 195px 0 195px",
 };
