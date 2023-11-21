@@ -1,11 +1,9 @@
 import React from "react";
 
-import { TitleStyled } from "./tile.style";
-
 interface TitleProps {
   text: string;
 }
 
 export const Title = (props: TitleProps): JSX.Element => {
-  return <TitleStyled>{props.text}</TitleStyled>;
+  return <h1 className="font-rick text-3xl font-bold">{props.text}</h1>;
 };

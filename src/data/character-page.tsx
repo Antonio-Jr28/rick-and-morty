@@ -13,6 +13,7 @@ export const getPageCharacter = gql`
         id
         image
         name
+        species
       }
     }
   }

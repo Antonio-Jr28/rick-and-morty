@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-custom-image {
+ background-image: url('./assets/img/rick-and-morty.svg');
+ background-repeat: no-repeat;
+ background-size: contain;
+}
