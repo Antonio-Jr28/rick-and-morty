@@ -9,6 +9,7 @@ export const HomePage = () => {
       <Navbar />
 
       <div className="flex flex-row justify-center mt-44 gap-5">
+        
         <div className="rounded-full w-60 h-24 border-2 shadow-lg flex items-center justify-around gap-4 text-black bg-cyan-200">
           <Link to={"/personagens"}>Personagens</Link>
         </div>
