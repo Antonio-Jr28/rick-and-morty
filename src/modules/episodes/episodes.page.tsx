@@ -1,8 +1,8 @@
 import React from "react";
-import { Header } from "../components/atm.header";
-import { Title } from "../components/atm.title/title.components";
-import { Background } from "./style";
-import { FiltroLista } from "../components/atm.episodes-card/episodes-card.component";
+import { Header } from "../../components/atm.header";
+import { Title } from "../../components/atm.title/title.components";
+import { Background } from "../style";
+import { FiltroLista } from "../../components/atm.episodes-card/episodes-card.component";
 
 export const EpisodesPage = () => {
   return (
