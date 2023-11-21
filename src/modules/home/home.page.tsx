@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Navbar } from '../../components/atm.navbar';
 import { Link } from 'react-router-dom';
+import { Navbar } from '../../components/atm.navbar';
 
 export const HomePage = () => {
   return (
