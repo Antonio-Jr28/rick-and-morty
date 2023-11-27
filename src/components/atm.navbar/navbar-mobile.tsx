@@ -9,6 +9,7 @@ export const NavbarMobile: React.FC<NavbarMobileProps> = ({ menuItems }) => {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const toggleMenu = () => {
+    console.log('Toggling menu');
     setMenuOpen(!isMenuOpen);
   };
 

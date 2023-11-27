@@ -13,11 +13,11 @@ export const Navbar = () => {
 
   const IMAGE_WIDTH = '20%';
   return (
-    <nav className='flex h-20 items-center justify-around gap-4 bg-violet-900 px-8 shadow-xl'>
+    <div className='flex h-20 items-center justify-around gap-4 bg-violet-900 px-8 shadow-xl'>
       <img alt={navbarString.altImage} width={IMAGE_WIDTH} src={navbarString.srcImageLogo} />
 
       <NavbarMobile menuItems={menuItems} />
       <NavbarDesktop menuItems={menuItems} />
-    </nav>
+    </div>
   );
 };
