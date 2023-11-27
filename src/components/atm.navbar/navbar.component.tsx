@@ -5,7 +5,6 @@ import { NavbarDesktop } from './navbar-desktop';
 import { NavbarMobile } from './navbar-mobile';
 
 export const Navbar = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const menuItems = [
     { label: 'home', link: '/' },
     { label: 'personagens', link: '/personagens' },
@@ -14,10 +13,10 @@ export const Navbar = () => {
 
   const IMAGE_WIDTH = '20%';
   return (
-    <nav className='sticky top-0 m-auto flex h-32 w-full items-center justify-around gap-4 bg-violet-900 px-8 shadow-md'>
+    <nav className='flex h-20 items-center justify-around gap-4 bg-violet-900 px-8 shadow-xl'>
       <img alt={navbarString.altImage} width={IMAGE_WIDTH} src={navbarString.srcImageLogo} />
 
-      <NavbarMobile menuItems={menuItems}/>
+      <NavbarMobile menuItems={menuItems} />
       <NavbarDesktop menuItems={menuItems} />
     </nav>
   );
